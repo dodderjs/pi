@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- for ios 7 style, multi-resolution icon of 152x152 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Movies - Dodder">
+    <link rel="apple-touch-icon" href="icon-152.png">
+    <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Movies - Dodder">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{+title}Movies - Dodder{/title}</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <!--link rel="stylesheet" href="/css/mobile.css" media="only screen and (max-device-width: 1024px)" /-->
+</head>
+<body>
+
+	<div id="App">
+		{+html_body}
+		{/html_body}
+		<footer id="footer">{+copy}Copyright{/copy}</footer>
+	</div>
+
+	{+main_js}
+        <script src="/js/build.js"></script>
+    {/main_js}
+</body>
+</html>

@@ -1,0 +1,8 @@
+{>"layout"/}
+
+{<html_body}
+    <div id="Content" class="js-view-content">
+    </div>
+{/html_body}
+
+{<copy}{copy|s}{/copy}
