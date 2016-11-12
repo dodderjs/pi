@@ -44,7 +44,7 @@ $(function () {
 	            	chart.series[0].addPoint([ new Date(v.created_at).getTime(), v.temp], true, shift);
 	            	chart.series[1].addPoint([ new Date(v.created_at).getTime(), v.pres], true, shift);
 	            });
-	            setTimeout(requestData, 5000);    
+	            //setTimeout(requestData, 5000);    
 	        },
 	        cache: false
 	    });

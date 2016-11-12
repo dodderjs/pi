@@ -27,7 +27,7 @@ router.post('/temperature', function (req, res, next) {
 router.get('/temperature', function (req, res, next) {
 	db.getConnection()
 		.then(function (connection) {
-			return connection.query('SELECT temp, pres, created_at FROM temperature ORDER BY created_at DESC LIMIT 40');
+			return connection.query('SELECT temp, pres, created_at FROM temperature ORDER BY created_at DESC LIMIT 20');
 		})
 		.then(function (list) {
 			res.json(list);
