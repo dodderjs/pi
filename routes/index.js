@@ -3,6 +3,27 @@ var router = express.Router();
 var configs = require('../configs');
 var db = require('../lib/db');
 
+router.post('/temperature', function (req, res, next) {
+	if (req.body.api_key !== configs.api_key) {
+		return res.status(500).send('Something broke!');
+	}
+
+	db.getConnection()
+		.then(function (connection) {
+			if (!req.body.temp || !req.body.pres) {
+				throw new Error('no params');
+			}
+			return connection.query('INSERT INTO temperature SET ?', { temp: req.body.temp, pres: req.body.pres });
+		})
+		.then(function (list) {
+			res.status(200).send('New temperature data inserted');
+		})
+		.catch(function (err) {
+			console.log(err);
+			return res.status(500).send('Something broke!');
+		});
+});
+
 router.get('/temperature', function (req, res, next) {
 	db.getConnection()
 		.then(function (connection) {
@@ -13,22 +34,6 @@ router.get('/temperature', function (req, res, next) {
 		})
 		.catch(function (err) {
 			return res.status(500).send('Something broke!')
-		});
-});
-
-router.post('/temperature', function (req, res, next) {
-	db.getConnection()
-		.then(function (connection) {
-			if (!req.params || !req.params.temp || !req.params.press) {
-				throw new Error('no params');
-			}
-			return connection.query('INSERT INTO temperature SET ?', { temp: req.params.temp, pres: req.params.pres });
-		})
-		.then(function (list) {
-			res.status(200).send('New temperature data inserted');
-		})
-		.catch(function (err) {
-			return res.status(500).send('Something broke!');
 		});
 });
 

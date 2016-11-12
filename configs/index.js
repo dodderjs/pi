@@ -6,5 +6,6 @@ module.exports = {
 		password: '',
 		database: 'pi',
 		connectionLimit : 100
-	}
+	},
+	api_key: ''
 };
