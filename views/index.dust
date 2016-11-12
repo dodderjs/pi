@@ -1,8 +1,7 @@
 {>"layout"/}
 
 {<html_body}
-    <div id="Content" class="js-view-content">
-    </div>
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 {/html_body}
 
 {<copy}{copy|s}{/copy}

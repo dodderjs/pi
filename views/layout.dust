@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <!-- for ios 7 style, multi-resolution icon of 152x152 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Movies - Dodder">
+    <meta name="apple-mobile-web-app-title" content="{+title}Temperature - Dodder{/title}">
     <link rel="apple-touch-icon" href="icon-152.png">
     <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Movies - Dodder">
+    <meta name="application-name" content="{+title}Temperature - Dodder{/title}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{+title}Movies - Dodder{/title}</title>
+    <title>{+title}Temperature - Dodder{/title}</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <!--link rel="stylesheet" href="/css/mobile.css" media="only screen and (max-device-width: 1024px)" /-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 	</div>
 
 	{+main_js}
-        <script src="/js/build.js"></script>
+        <script src="/js/app.js"></script>
     {/main_js}
 </body>
 </html>
