@@ -3,7 +3,7 @@ var router = express.Router();
 var configs = require('../configs');
 var db = require('../lib/db');
 
-router.post('/temperature', function (req, res, next) {
+router.post('/temperature/update', function (req, res, next) {
 	if (req.body.api_key !== configs.api_key) {
 		return res.status(500).send('Something broke!');
 	}
